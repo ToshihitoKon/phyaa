@@ -6,6 +6,7 @@ music_suffixes = ['.mp3', '.aac', '.flac', '.m4a']
 
 def search_entry(path):
     paths = []
+    print(path)
     if path.is_dir():
         for child in path.iterdir():
             paths.extend(search_entry(child))
@@ -16,7 +17,7 @@ def search_entry(path):
     return []
 
 def mysql_sync_entry(paths):
-    conn = pymysql.connect(host='172.17.0.1',
+    conn = pymysql.connect(host='db',
             user='root',
             db='phyaa_dev',
             charset='utf8mb4',
@@ -39,4 +40,5 @@ def mysql_sync_entry(paths):
 
 if __name__ == '__main__':
     paths = search_entry(Path('.'))
-    mysql_sync_entry(paths)
+    print(paths)
+    #mysql_sync_entry(paths)

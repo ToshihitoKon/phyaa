@@ -1,3 +1,12 @@
- # PYHAA
+ # Phyaa
 
- ディレクトリ以下の音源にタグ付けしたりするくん
+ファイルにタグ付けをします
+
+## development
+
+```
+docker-compose up
+```
+
+adminer
+access to http://localhost:8080
