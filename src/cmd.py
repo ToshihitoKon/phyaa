@@ -1,4 +1,5 @@
 import os
+import json
 import model
 
 def exec(argv):
@@ -20,7 +21,8 @@ def exec(argv):
         return 1
 
 def list_files(path):
-    print(model.list_files(path))
+    ret = model.list_files(path)
+    print(json.dumps(ret, ensure_ascii=False))
     return 0
 
 def list_tagged_files(tag):

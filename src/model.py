@@ -1,14 +1,14 @@
 import os
 
-def list_files(path):
+def list(path):
     directries = os.scandir(path=path)
     files = []
     dirs = []
     for f in directries:
         if f.is_file():
-            files.append(f.name)
+            files.append({"name":f.name, "tags":[]})
         elif f.is_dir():
-            dirs.append(f.name)
+            dirs.append({"name":f.name, "tags":[]})
         else:
             print("???", f)
     return {"files":files,"dirs":dirs}
